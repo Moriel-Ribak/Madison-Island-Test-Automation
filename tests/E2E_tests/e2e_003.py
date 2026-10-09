@@ -3,20 +3,25 @@ import pytest
 from allure_commons.types import Severity
 from pages.base_page import BasePage
 from tests.base_test import BaseTest
+from util.config import ConfigReader
+
 
 @pytest.mark.usefixtures("function_setup")
 @allure.severity(Severity.BLOCKER)
 @allure.epic("E2E")
 class TestE2ELogin(BaseTest):
 
+    valid_user = ConfigReader.read_list("users", "valid_user")
+
     @allure.title("E2E Login")
     @allure.description("Login, add item and validate it in cart")
     @allure.story("User logs in successfully and the selected product is shown correctly in the cart")
-    def test_login_add_item(self):
+    @pytest.mark.parametrize("email,password",valid_user)
+    def test_login_add_item(self,email,password):
 
         with allure.step("log in to site"):
             self.header_area_obj.press_login_button()
-            self.login_page_obj.login("darius@gmail.com","darius1243")
+            self.login_page_obj.login(email,password)
 
         with allure.step("nevigate to all products and add the first item and save title"):
             self.header_area_obj.press_catalog_button()
