@@ -1,88 +1,99 @@
-[README.md](https://github.com/user-attachments/files/33251150/README.md)
-# Madison Island — Automation Testing Project
+[README_HE.md](https://github.com/user-attachments/files/33251305/README_HE.md)
+# 🛒 Madison Island | פרויקט אוטומציה
 
-**Languages:** [English](#english) · [עברית](#עברית)
+**🐍 Python · 🎭 Playwright · 🧪 Pytest · 🧩 POM · 📊 Allure**
+
+🌍 **שפה:** 🇮🇱 עברית · [🇬🇧 English](./README_EN.md) · [🌐 שתי השפות](./README.md)
 
 ---
 
-<a id="english"></a>
+<a id="hebrew"></a>
 
-## English — Web Test Automation
+## 🇮🇱 עברית
 
-[עברית](#עברית) · [STD test document](./Madison_Island_STD_Bilingual_Severity_Colors.xlsx)
+[🇬🇧 Switch to English](./README_EN.md) · [📊 פתיחת מסמך STD](./Madison_Island_STD.xlsx)
 
-## About the project
+### 🚀 על הפרויקט
 
-This project tests the [Madison Island](https://madison-island.com/) online store using **Python, Playwright, Pytest, and Allure**. It uses the **Page Object Model (POM)** to keep test steps separate from website actions.
+הפרויקט כולל בדיקות אוטומטיות לאתר המסחר **[Madison Island](https://madison-island.com/)** באמצעות **Python, Playwright ו־Pytest**. תשתית הבדיקות מבוססת על **Page Object Model (POM)**, כדי להפריד בין הפעולות באתר לבין קוד הבדיקות.
 
-The repository contains **44 test cases across 15 test files**, including tests that run with different data using `pytest.mark.parametrize`.
+מטרת הפרויקט היא לבדוק את הפונקציות המרכזיות באתר, לתרגל כתיבת אוטומציה ולתעד את הבדיקות בצורה מסודרת. בפרויקט יש **44 מקרי בדיקה ב־15 קובצי בדיקות**, כולל הרצות עם נתונים שונים.
 
-## Tools
+### 🛠️ טכנולוגיות וכלים
 
-- **Python** — test code
-- **Playwright** — browser actions and checks
-- **Pytest** — test runs, fixtures, and test data
-- **POM** — reusable page objects
-- **Allure** — test reports and optional screenshots
-- **Excel STD** — documented test cases and expected results
+| כלי | למה הוא משמש? |
+| --- | --- |
+| 🐍 **Python** | כתיבת קוד האוטומציה |
+| 🎭 **Playwright** | פעולות ואימותים בדפדפן |
+| 🧪 **Pytest** | הרצת בדיקות, Fixtures ונתוני בדיקה |
+| 🧩 **POM** | הפרדת קוד הבדיקות לפי דפי האתר |
+| 📊 **Allure** | דוחות, שלבי בדיקה וצילומי מסך כשהם מוגדרים |
+| 📗 **Excel / STD** | תיעוד מקרי הבדיקה והתוצאות הצפויות |
 
-## Project structure
+### 📁 מבנה הפרויקט
 
 ```text
-project/
-├── components/        # Shared components, such as the header
-├── pages/             # Page objects and BasePage
-├── tests/             # Test files grouped by feature
-├── util/              # Configuration and test data
-├── conftest.py        # Browser setup and pytest fixtures
-├── pytest.ini         # Pytest settings
-└── README.md          # Project documentation
+Madison-Island-Test-Automation/
+├── components/                # רכיבים משותפים באתר
+├── pages/                     # Page Objects ו-BasePage
+├── tests/                     # קובצי הבדיקות לפי נושא
+├── util/                      # קוד עזר ונתוני בדיקה
+├── pytest.ini                 # הגדרות Pytest
+├── requirements.txt           # ספריות נדרשות
+├── Madison_Island_STD.xlsx    # מסמך הבדיקות STD
+└── README.md                  # תיעוד הפרויקט
 ```
 
-## Test coverage
+> הגדרות הדפדפן והאובייקטים לבדיקות נמצאות ב־`conftest.py` וב־`BaseTest`.
 
-| Area | What is tested |
+> 🔐 **אבטחה:** אין להעלות סיסמאות אמיתיות, `auth.json` או קובצי הגדרות פרטיים. ניתן לצרף קובץ הגדרות לדוגמה ללא סודות.
+
+### ✅ מה נבדק בפרויקט?
+
+| אזור | מה נבדק? |
 | --- | --- |
-| Home | Main content, collections, and slideshow |
-| Header | Navigation to different pages |
-| Catalog | Products, pages, and price sorting |
-| Product | Title, price, size, color, and cart details |
-| Cart | Empty cart, shopping link, products, and quantity |
-| Search | Existing and missing products |
-| Login | Valid and invalid sign-in data; reset password pages |
-| Registration | Valid, invalid, and missing form data |
-| E2E | Shopping flows from product selection to the cart |
+| 🏠 **Home** | תוכן דף הבית, קולקציות ומצגת תמונות |
+| 🧭 **Header** | ניווט בין עמודי האתר |
+| 🛍️ **Catalog** | רשימת מוצרים, מעבר עמודים ומיון לפי מחיר |
+| 👕 **Product** | שם, מחיר, מידה, צבע ופרטי מוצר בעגלה |
+| 🛒 **Cart** | עגלה ריקה, מוצרים שנוספו ושינוי כמות |
+| 🔎 **Search** | חיפוש מוצרים קיימים ולא קיימים |
+| 🔐 **Login** | התחברות תקינה/שגויה ודפי איפוס סיסמה |
+| 📝 **Registration** | הרשמה עם פרטים תקינים או חסרים |
+| 🔄 **E2E** | תהליכים מבחירת מוצר ועד לעגלת הקניות |
 
-## STD — Software Test Description
+חלק מהבדיקות משתמשות ב־**`pytest.mark.parametrize`**, שמאפשר להריץ אותה פונקציה עם כמה מערכי נתונים.
 
-The project includes an **STD Excel file in English and Hebrew**. It documents the **44 test cases** with test IDs, steps, test data, expected results, severity, and fields for actual results and status.
+### 📗 מסמך STD — Software Test Description
 
-The STD is a description of planned checks. It does **not** mean that every test has passed.
+**[➡️ פתיחת / הורדת מסמך ה־STD באקסל](./Madison_Island_STD.xlsx)**
 
-To make the link above work, place `Madison_Island_STD_Bilingual_Severity_Colors.xlsx` in the same folder as `README.md` (or update the link to its real location).
+מסמך ה־STD קיים **בעברית ובאנגלית** ומתעד **44 מקרי בדיקה**. לכל מקרה מופיעים מזהה בדיקה, שלבים, נתוני בדיקה, תוצאה צפויה, רמת חומרה ושדות למילוי תוצאה בפועל וסטטוס.
 
-## Important: CAPTCHA limitation
+המסמך מתאר **מה צריך לבדוק**, ולא מעיד שכל הבדיקות עברו בהצלחה.
 
-Madison Island uses **CAPTCHA / anti-bot protection** on authentication forms. Because of this, **login and registration submissions may be blocked during automated runs**, even when the test code works as written.
+### ⚠️ מגבלת CAPTCHA — התחברות והרשמה
 
-This can affect valid login, invalid login, account registration, and the E2E test that signs in. Tests that only open the Login or Reset Password pages may still run normally. CAPTCHA is not bypassed in this project.
+באתר קיימת הגנת **CAPTCHA / Anti-Bot** בטופסי ההתחברות וההרשמה. לכן, בדיקות אוטומטיות ששולחות טפסים אלה **עלולות להיחסם או להיכשל**, גם אם קוד האוטומציה תקין.
 
-**A failed authentication test does not by itself prove there is a website bug.** Check whether CAPTCHA caused the failure before reporting a defect.
+המגבלה משפיעה בעיקר על בדיקות Login, Registration ובדיקות E2E שמחייבות התחברות. בדיקות שרק פותחות את מסכי ההתחברות או איפוס הסיסמה עשויות לפעול כרגיל.
 
-## Running the tests
+**הפרויקט אינו עוקף CAPTCHA.** כישלון בבדיקת התחברות או הרשמה לא מעיד בהכרח על תקלה באתר.
 
-### 1. Install the Python packages
+### ▶️ איך מריצים את הבדיקות?
+
+**1. מתקינים את הספריות**
 
 ```bash
-python -m pip install pytest playwright allure-pytest
+python -m pip install -r requirements.txt
 python -m playwright install chromium
 ```
 
-The current `conftest.py` opens **Google Chrome** with `channel="chrome"`, so Chrome must also be installed on your computer.
+הגדרות הדפדפן משתמשות ב־Google Chrome (`channel="chrome"`), ולכן צריך להתקין Chrome במחשב.
 
-### 2. Configure test discovery
+**2. מוודאים את הגדרות `pytest.ini`**
 
-The project's test files use names such as `cart_001.py` instead of Pytest's default `test_*.py` pattern. Make sure your root `pytest.ini` contains:
+שמות קובצי הבדיקות הם למשל `cart_001.py`, ולכן צריך להגדיר ל־Pytest כיצד לזהות אותם:
 
 ```ini
 [pytest]
@@ -93,169 +104,37 @@ python_functions = test_*
 addopts = --alluredir=allure-results
 ```
 
-### 3. Run all tests
+**3. מריצים בדיקות**
 
 ```bash
+# הרצת כל הבדיקות
 python -m pytest tests/ -v
-```
 
-Run one file:
-
-```bash
+# הרצת קובץ אחד
 python -m pytest tests/cart_page_tests/cart_001.py -v
-```
 
-Check how many tests Pytest finds:
-
-```bash
+# בדיקת זיהוי הטסטים בלי להריץ אותם
 python -m pytest --collect-only -q
 ```
 
-### 4. View the Allure report
+**4. פותחים דוח Allure**
 
 ```bash
 allure serve allure-results
 ```
 
-This requires **Allure Commandline** to be installed separately. Screenshots appear in reports when the screenshot attachment hook is enabled in `conftest.py`.
+יש להתקין בנפרד את Allure Commandline. צילומי מסך של בדיקות שנכשלו יופיעו בדוח אם הוגדר לכך Hook ב־`conftest.py`.
 
-## Framework overview
+### 🏗️ איך התשתית בנויה?
 
-- `BasePage` provides common actions such as click, fill, and read text.
-- Page objects contain actions for each website page.
-- `BaseTest` exposes page objects to the tests.
-- `conftest.py` sets up and closes browsers using fixtures.
-- Tests contain steps and assertions that check expected results.
+- **BasePage** — פעולות משותפות כמו לחיצה, הקלדה וקבלת טקסט.
+- **Page Objects** — פעולות ייחודיות לכל עמוד באתר.
+- **BaseTest** — גישה לאובייקטים של הדפים מתוך הטסטים.
+- **conftest.py** — פתיחת דפדפן וניהול Fixtures.
+- **קובצי בדיקות** — שלבים ו־Assertions לאימות תוצאות.
 
-## Purpose
+### 🎯 מטרת הפרויקט
 
-This is a learning and portfolio project showing hands-on experience with **web automation, functional testing, E2E testing, data-driven testing, test documentation, and reporting**.
+זהו פרויקט לימודי ופרויקט פורטפוליו שמציג עבודה מעשית ב־**אוטומציה ל־Web, בדיקות פונקציונליות, בדיקות E2E, בדיקות מבוססות נתונים, תיעוד STD ודוחות Allure**.
 
-
----
-
-<a id="עברית"></a>
-
-## עברית — פרויקט אוטומציה לבדיקות Web
-
-[English](#english) · [מסמך STD](./Madison_Island_STD_Bilingual_Severity_Colors.xlsx)
-
-## על הפרויקט
-
-פרויקט בדיקות אוטומטיות לאתר המסחר [Madison Island](https://madison-island.com/), באמצעות **Python, Playwright, Pytest ו-Allure**. הפרויקט משתמש בתבנית **Page Object Model (POM)** כדי להפריד בין שלבי הבדיקה לבין הפעולות באתר.
-
-הפרויקט כולל **44 מקרי בדיקה ב־15 קובצי בדיקות**, ובהם בדיקות עם כמה מערכי נתונים באמצעות `pytest.mark.parametrize`.
-
-## כלים וטכנולוגיות
-
-- **Python** – כתיבת קוד הבדיקות
-- **Playwright** – פעולות ובדיקות בדפדפן
-- **Pytest** – הרצת בדיקות, Fixtures ונתוני בדיקה
-- **POM** – מחלקות נפרדות לפעולות בכל עמוד
-- **Allure** – דוחות בדיקה וצילומי מסך, אם הוגדרו
-- **Excel STD** – תיעוד מקרי הבדיקה והתוצאות הצפויות
-
-## מבנה הפרויקט
-
-```text
-project/
-├── components/        # רכיבים משותפים, כמו Header
-├── pages/             # Page Objects ו-BasePage
-├── tests/             # קובצי בדיקות לפי תחום
-├── util/              # הגדרות ונתוני בדיקה
-├── conftest.py        # הגדרת דפדפן ו-Fixtures
-├── pytest.ini         # הגדרות Pytest
-└── README.md          # תיעוד הפרויקט
-```
-
-## כיסוי הבדיקות
-
-| אזור | מה נבדק |
-| --- | --- |
-| Home | תוכן דף הבית, קולקציות ומצגת תמונות |
-| Header | ניווט בין עמודי האתר |
-| Catalog | הצגת מוצרים, מעבר עמודים ומיון לפי מחיר |
-| Product | שם ומחיר מוצר, מידה, צבע ופרטים בעגלה |
-| Cart | עגלה ריקה, המשך קנייה, מוצרים וכמות |
-| Search | חיפוש מוצר קיים ומוצר שלא קיים |
-| Login | התחברות עם נתונים תקינים ושגויים, ודפי איפוס סיסמה |
-| Registration | הרשמה עם נתונים תקינים, שגויים או חסרים |
-| E2E | תהליכי קנייה מבחירת מוצר ועד לעגלה |
-
-## מסמך STD – Software Test Description
-
-לפרויקט מצורף **קובץ Excel בעברית ובאנגלית** הכולל תיעוד של **44 מקרי בדיקה**: מזהה בדיקה, שלבים, נתוני קלט, תוצאה צפויה, רמת חומרה ועמודות למילוי תוצאה בפועל וסטטוס.
-
-ה־STD מתאר מה הבדיקה אמורה לאמת; הוא **לא אומר שכל הבדיקות עברו בהצלחה**.
-
-כדי שהקישור בראש המסמך יעבוד, יש לשים את הקובץ `Madison_Island_STD_Bilingual_Severity_Colors.xlsx` באותה תיקייה של `README.md`, או לעדכן את הקישור למיקום האמיתי שלו.
-
-## מגבלה חשובה: CAPTCHA
-
-באתר Madison Island קיימת **הגנת CAPTCHA / Anti-Bot** בטפסים הקשורים להתחברות ולהרשמה. לכן, **בדיקות אוטומטיות ששולחות טופסי Login או Registration עלולות להיחסם**, גם כאשר קוד הבדיקה תקין.
-
-המגבלה יכולה להשפיע על התחברות תקינה או שגויה, הרשמה ועל בדיקת E2E שמבצעת התחברות. בדיקות שרק פותחות את מסכי ההתחברות או איפוס הסיסמה עדיין עשויות לפעול כרגיל. הפרויקט אינו עוקף CAPTCHA.
-
-**כישלון בבדיקת התחברות אינו מוכיח לבדו שיש באג באתר.** לפני פתיחת תקלה צריך לבדוק אם הגנת CAPTCHA היא זו שחסמה את ההרצה.
-
-## איך מריצים את הבדיקות?
-
-### 1. מתקינים ספריות Python
-
-```bash
-python -m pip install pytest playwright allure-pytest
-python -m playwright install chromium
-```
-
-הקובץ `conftest.py` הנוכחי פותח **Google Chrome** באמצעות `channel="chrome"`, ולכן Chrome צריך להיות מותקן במחשב.
-
-### 2. מגדירים זיהוי קובצי בדיקה
-
-שמות הקבצים בפרויקט הם למשל `cart_001.py`, ולא `test_cart.py`. לכן יש לוודא שקובץ `pytest.ini` בתיקיית הפרויקט הראשית כולל:
-
-```ini
-[pytest]
-testpaths = tests
-python_files = *_001.py *_002.py *_003.py *_004.py
-python_classes = Test*
-python_functions = test_*
-addopts = --alluredir=allure-results
-```
-
-### 3. מריצים את כל הבדיקות
-
-```bash
-python -m pytest tests/ -v
-```
-
-הרצת קובץ אחד:
-
-```bash
-python -m pytest tests/cart_page_tests/cart_001.py -v
-```
-
-בדיקה אילו טסטים Pytest מזהה:
-
-```bash
-python -m pytest --collect-only -q
-```
-
-### 4. פותחים דוח Allure
-
-```bash
-allure serve allure-results
-```
-
-צריך להתקין בנפרד **Allure Commandline**. צילומי מסך יוצגו בדוח אם הוגדרה הצמדת תמונות בקובץ `conftest.py`.
-
-## איך תשתית האוטומציה עובדת?
-
-- `BasePage` מכיל פעולות משותפות כמו לחיצה, הקלדה וקריאת טקסט.
-- Page Objects מכילים פעולות של עמודי האתר השונים.
-- `BaseTest` מאפשר גישה לאובייקטים של העמודים מתוך הטסטים.
-- `conftest.py` פותח וסוגר דפדפנים באמצעות Fixtures.
-- קובצי הבדיקות מכילים שלבים ו־Assertions לבדיקת התוצאה.
-
-## מטרת הפרויקט
-
-זהו פרויקט לימודי ופרויקט פורטפוליו שמציג ניסיון מעשי ב־**אוטומציה ל־Web, בדיקות פונקציונליות, בדיקות E2E, בדיקות מבוססות נתונים, תיעוד STD ודוחות בדיקה**.
+[🌍 מעבר בין שפות](./README.md)
