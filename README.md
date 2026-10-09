@@ -11,7 +11,7 @@
 
 ## 🇮🇱 עברית
 
-[🇬🇧 Switch to English](./README_EN.md) · [📊 פתיחת מסמך STD](./Madison_Island_STD.xlsx)
+[🇬🇧 Switch to English](./README_EN.md) · [📊 פתיחת מסמך STD](./Madison_Island_STD(1).xlsx)
 
 ### 🚀 על הפרויקט
 
