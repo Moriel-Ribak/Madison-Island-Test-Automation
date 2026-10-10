@@ -1,5 +1,4 @@
 import allure
-import driver
 import pytest
 from playwright.sync_api import sync_playwright, Page
 from components.header_area import HeaderArea
