@@ -1,6 +1,5 @@
 import allure
 import pytest
-import driver
 from playwright.sync_api import sync_playwright, Page
 from components.header_area import HeaderArea
 from pages.cart_page import CartPage
